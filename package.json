@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@openrouter/sdk": "^0.3.12",
+    "bedrock-protocol": "^3.52.0",
+    "groq-sdk": "^0.37.0",
+    "minecraft-data": "^3.102.3",
+    "mineflayer": "^4.33.0",
+    "mineflayer-pathfinder": "^2.4.5",
+    "ollama": "^0.6.3",
+    "openai": "^6.16.0",
+    "vec3": "^0.1.10"
+  }
+}

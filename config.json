@@ -1,0 +1,5 @@
+{
+    "host": "ali13.aternos.me",
+    "port": "17142",
+    "model": "llama3.2:1b"
+}
