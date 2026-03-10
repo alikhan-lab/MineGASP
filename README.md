@@ -2,19 +2,18 @@ MineGASP — это мощная связка из ИИ-бота на Node.js и
 (нажмите на кнопку code и выберите скачать зип)
 
 Как запустить:
-Подготовка: Запустите setup.bat. Он установит необходимые зависимости Node.js (нужно только при первом запуске).
+Простите super.bat не работает по нейзвестным причинам вам придётся зайти в повершелл или в командную строку и напишите npm install
 
 Запуск через C++: Откройте файл лаунчера (например, Launcher.exe).
 
 Результат: Лаунчер сам подхватит настройки и запустит вашего бота с максимальным приоритетом скорости.
 
-🇺🇸 Project Overview
 MineGASP is a high-performance combination of a Node.js AI bot and a custom C++ launcher. By using C++, we ensured that the bot control interface is lightning-fast and extremely lightweight on system resources.
 (press green Code button then choose Download ZIP)
 
 Quick Start:
-Setup: Run setup.bat. This installs the required Node.js dependencies (one-time setup).
-
+Sorry a super.bat doesn't working
 Launch via C++: Open the launcher executable (e.g., Launcher.exe).
 
 Ready: The launcher will automatically manage the bot and start it with peak efficiency.
+(sorry but super.bat for no reason doesn't working so write from project folder in PowerShell or CMD "npm install")
