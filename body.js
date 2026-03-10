@@ -13,22 +13,48 @@ let attackTarget = null;
 
 // --- ОГРОМНЫЙ АССОРТИМЕНТ (Словарь имен) ---
 const nameMap = {
-    // Мобы
     'свинья': 'pig', 'корова': 'cow', 'овца': 'sheep', 'курица': 'chicken', 'паук': 'spider',
     'зомби': 'zombie', 'скелет': 'skeleton', 'крипер': 'creeper', 'эндермен': 'enderman',
     'утопленник': 'drowned', 'слайм': 'slime', 'житель': 'villager', 'пчела': 'bee',
-    // Еда / Ресурсы
-    'свинина': 'porkchop', 'говядина': 'beef', 'курятина': 'chicken', 'яблоко': 'apple',
-    'хлеб': 'bread', 'железо': 'iron_ingot', 'золото': 'gold_ingot', 'алмаз': 'diamond',
+    'спрут': 'squid', 'волк': 'wolf', 'собака': 'wolf', 'кошка': 'cat', 'лошадь': 'horse',
+    'осел': 'donkey', 'лама': 'llama', 'панда': 'panda', 'лиса': 'fox', 'белый_медведь': 'polar_bear',
+    'черепаха': 'turtle', 'аксолотль': 'axolotl', 'лягушка': 'frog', 'верблюд': 'camel',
+    'нюхач': 'sniffer', 'разбойник': 'pillager', 'поборник': 'vindicator', 'ведьма': 'witch',
+    'гаст': 'ghast', 'пиглин': 'piglin', 'хоглин': 'hoglin', 'блейз': 'blaze', 'ифрит': 'blaze',
+    'скелет_иссушитель': 'wither_skeleton', 'страж': 'guardian', 'шалкер': 'shulker',
+
+    'свинина': 'porkchop', 'говядина': 'beef', 'курятина': 'chicken', 'баранина': 'mutton',
+    'крольчатина': 'rabbit', 'треска': 'cod', 'лосось': 'salmon', 'яблоко': 'apple',
+    'золотое_яблоко': 'golden_apple', 'морковь': 'carrot', 'картофель': 'potato',
+    'арбуз': 'melon_slice', 'тыква': 'pumpkin', 'хлеб': 'bread', 'печенье': 'cookie',
+    'пирог': 'pumpkin_pie', 'гнилая_плоть': 'rotten_flesh', 'паучий_глаз': 'spider_eye',
+
+    'железо': 'iron_ingot', 'золото': 'gold_ingot', 'алмаз': 'diamond', 'изумруд': 'emerald',
     'незерит': 'netherite_ingot', 'палка': 'stick', 'уголь': 'coal', 'медь': 'copper_ingot',
-    // Блоки
-    'дерево': 'log', 'дуб': 'oak_log', 'береза': 'birch_log', 'камень': 'stone',
-    'булыжник': 'cobblestone', 'земля': 'dirt', 'песок': 'sand', 'гравий': 'gravel',
-    'стекло': 'glass', 'трава': 'grass', 'руда': 'ore', 'алмазная_руда': 'diamond_ore',
-    // Вещи
-    'меч': 'sword', 'кирка': 'pickaxe', 'топор': 'axe', 'лопата': 'shovel', 'лук': 'bow',
-    'щит': 'shield', 'элитры': 'elytra', 'шлем': 'helmet', 'нагрудник': 'chestplate',
-    'штаны': 'leggings', 'ботинки': 'boots', 'факел': 'torch', 'кровать': 'bed'
+    'редстоун': 'redstone', 'лазурит': 'lapis_lazuli', 'кварц': 'nether_quartz',
+    'аметист': 'amethyst_shard', 'кремень': 'flint', 'порох': 'gunpowder', 'нить': 'string',
+    'перо': 'feather', 'кожа': 'leather', 'слизь': 'slime_ball', 'яйцо': 'egg',
+    'огненный_стержень': 'blaze_rod', 'жемчуг_энда': 'ender_pearl', 'око_энда': 'ender_eye',
+    'незеритовый_лом': 'netherite_scrap',
+
+    'дерево': 'log', 'дуб': 'oak_log', 'береза': 'birch_log', 'ель': 'spruce_log',
+    'акация': 'acacia_log', 'темный_дуб': 'dark_oak_log', 'тропическое_дерево': 'jungle_log',
+    'вишня': 'cherry_log', 'мангр': 'mangrove_log', 'бамбук': 'bamboo_block',
+    'камень': 'stone', 'булыжник': 'cobblestone', 'земля': 'dirt', 'песок': 'sand',
+    'гравий': 'gravel', 'глина': 'clay', 'стекло': 'glass', 'трава': 'grass', 'дерн': 'grass_block',
+    'андезит': 'andesite', 'диорит': 'diorite', 'гранит': 'granite', 'туф': 'tuff',
+    'глубинный_сланец': 'deepslate', 'обсидиан': 'obsidian', 'бедроку': 'bedrock',
+    'незерак': 'netherrack', 'песок_душ': 'soul_sand', 'базальт': 'basalt', 'чернит': 'blackstone',
+    'руда': 'ore', 'алмазная_руда': 'diamond_ore', 'железная_руда': 'iron_ore',
+    'золотая_руда': 'gold_ore', 'медная_руда': 'copper_ore', 'угольная_руда': 'coal_ore',
+
+    'меч': 'sword', 'кирка': 'pickaxe', 'топор': 'axe', 'лопата': 'shovel', 'мотыга': 'hoe',
+    'лук': 'bow', 'арбалет': 'crossbow', 'стрела': 'arrow', 'щит': 'shield',
+    'элитры': 'elytra', 'трезубец': 'trident', 'подзорная_труба': 'spyglass',
+    'шлем': 'helmet', 'нагрудник': 'chestplate', 'штаны': 'leggings', 'ботинки': 'boots',
+    'факел': 'torch', 'кровать': 'bed', 'сундук': 'chest', 'верстак': 'crafting_table',
+    'печь': 'furnace', 'ведро': 'bucket', 'ведро_воды': 'water_bucket', 'ведро_лавы': 'lava_bucket',
+    'лодка': 'boat', 'удочка': 'fishing_rod'
 };
 
 // Список всех быстрых моделей 2026
@@ -180,4 +206,5 @@ bot.on('spawn', () => {
     moves.allowParkour = true; moves.canDig = true;
     bot.pathfinder.setMovements(moves);
     log("SYSTEM", "SmaG запущен с полным арсеналом!"); 
+
 });
